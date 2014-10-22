@@ -17,6 +17,11 @@ let g:syntastic_auto_jump = 2
 map <F1> :NERDTreeToggle<CR>
 map <F2> :SyntasticToggleMode<CR>
 
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
 syntax on
 " filetype plugin indent on
 
