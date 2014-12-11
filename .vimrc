@@ -12,7 +12,6 @@ let g:syntastic_check_on_write = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_auto_jump = 2
 
 map <F1> :NERDTreeToggle<CR>
 map <F2> :SyntasticToggleMode<CR>
@@ -34,7 +33,6 @@ set backspace=indent,eol,start " better behaved backspace
 set shiftround
 
 set mouse=a
-
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
