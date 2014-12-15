@@ -44,6 +44,9 @@ set incsearch
 set number
 set numberwidth=4
 
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
+
 set nowrap
 set novisualbell
 set scrolloff=5
@@ -66,5 +69,7 @@ set formatoptions=cq
 " custom syntax highlighting
 "
 
+" sudo write this file
+cmap W! w !sudo tee % >/dev/null
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.less set filetype=less
