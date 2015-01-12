@@ -8,6 +8,7 @@ let g:miniBufExplMapWindowNavVim = 1
 
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_go_checkers = ['gofmt', 'golint', 'govet']
 let g:syntastic_check_on_write = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
@@ -20,9 +21,6 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
-
-syntax on
-" filetype plugin indent on
 
 " OH MY GOD YOU CAN ELIMINATE SWAPFILES
 set nobackup
@@ -46,8 +44,8 @@ set incsearch
 set number
 set numberwidth=4
 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
+"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set list
 
 set nowrap
 set novisualbell
@@ -70,6 +68,9 @@ set formatoptions=cq
 "
 " custom syntax highlighting
 "
+set rtp+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
 
 " sudo write this file
 cmap W! w !sudo tee % >/dev/null
