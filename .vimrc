@@ -7,7 +7,7 @@ filetype on
 let g:miniBufExplMapWindowNavVim = 1
 
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['gofmt', 'golint', 'govet']
 let g:syntastic_check_on_write = 1
 let g:syntastic_check_on_open = 1
@@ -71,6 +71,8 @@ set formatoptions=cq
 set rtp+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
+
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
 " sudo write this file
 cmap W! w !sudo tee % >/dev/null
