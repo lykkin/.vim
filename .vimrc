@@ -57,6 +57,7 @@ set background=dark
 set ruler
 set noerrorbells
 set showmatch
+set cursorline
 
 "
 " textwidth in comments mode only
