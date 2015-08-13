@@ -26,6 +26,8 @@ let g:ctrlp_prompt_mappings = {
 set nobackup
 set noswapfile
 
+set wildmenu
+
 set backspace=indent,eol,start " better behaved backspace
 
 set shiftround
@@ -43,6 +45,10 @@ set autoindent
 set incsearch
 set number
 set numberwidth=4
+
+set cc=90
+
+colorscheme vividchalk
 
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 "set list
