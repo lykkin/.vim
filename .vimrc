@@ -42,6 +42,9 @@ set secure
 set smarttab
 set autoindent
 
+" markdown
+au BufRead,BufNewFile *.markdown,*.md,*.txt setlocal spell textwidth=80
+
 set incsearch
 set number
 set numberwidth=4
