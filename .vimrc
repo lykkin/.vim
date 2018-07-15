@@ -9,6 +9,8 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['gofmt', 'golint', 'govet']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_check_on_write = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
@@ -16,6 +18,7 @@ let g:syntastic_aggregate_errors = 1
 
 map <F1> :NERDTreeToggle<CR>
 map <F2> :SyntasticToggleMode<CR>
+nnoremap <F3> :vertical wincmd f<CR>
 
 let g:rainbow_active = 1
 let g:rainbow_conf = {
@@ -41,10 +44,7 @@ let g:rainbow_conf = {
 \   }
 \}
 
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
+set rtp+=/usr/local/opt/fzf
 
 " OH MY GOD YOU CAN ELIMINATE SWAPFILES
 set nobackup
@@ -75,7 +75,8 @@ set numberwidth=4
 
 set cc=90
 
-colorscheme vividchalk
+set t_Co=256
+colorscheme PaperColor
 
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 "set list
@@ -112,3 +113,19 @@ autocmd FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2|set
 cmap W! w !sudo tee % >/dev/null
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.less set filetype=less
+
+
+" Plugins
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+"
+let g:ycm_confirm_extra_conf = 0
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+filetype plugin indent on

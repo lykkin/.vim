@@ -19,3 +19,6 @@
 [submodule "bundle/rainbow"]
 	path = bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
+[submodule "papercolor-theme"]
+	path = papercolor-theme
+	url = git@github.com:NLKNguyen/papercolor-theme.git
