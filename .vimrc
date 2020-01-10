@@ -16,6 +16,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_aggregate_errors = 1
 
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+
 map <F1> :NERDTreeToggle<CR>
 map <F2> :SyntasticToggleMode<CR>
 nnoremap <F3> :vertical wincmd f<CR>
@@ -57,9 +60,9 @@ set backspace=indent,eol,start " better behaved backspace
 set shiftround
 
 set mouse=a
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set exrc
 set secure
@@ -108,6 +111,7 @@ filetype plugin indent on
 syntax on
 
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+autocmd FileType typescript set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
 " sudo write this file
 cmap W! w !sudo tee % >/dev/null
@@ -118,14 +122,14 @@ au BufNewFile,BufRead *.less set filetype=less
 " Plugins
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 "
-let g:ycm_confirm_extra_conf = 0
-Plugin 'VundleVim/Vundle.vim'
+"let g:ycm_confirm_extra_conf = 0
+"Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
-call vundle#end()
+"call vundle#end()
 filetype plugin indent on
