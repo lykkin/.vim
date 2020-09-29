@@ -84,7 +84,7 @@ set cc=90
 
 set t_Co=256
 syntax enable
-colorscheme vividchalk
+colorscheme PaperColor
 set background=dark
 
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
