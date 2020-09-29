@@ -1,9 +1,13 @@
-" Plugin settings from http://sontek.net/turning-vim-into-a-modern-python-ide
-filetype off
-execute pathogen#infect()
-call pathogen#helptags()
-filetype on
-
+call plug#begin()
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'frazrepo/vim-rainbow'
+Plug 'junegunn/fzf'
+call plug#end()
 let g:miniBufExplMapWindowNavVim = 1
 
 let g:syntastic_python_checkers = ['flake8']
@@ -79,7 +83,9 @@ set numberwidth=4
 set cc=90
 
 set t_Co=256
-colorscheme PaperColor
+syntax enable
+colorscheme vividchalk
+set background=dark
 
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 "set list
@@ -90,7 +96,6 @@ set scrolloff=5
 set nocompatible
 set sidescrolloff=5
 
-set background=dark
 set ruler
 set noerrorbells
 set showmatch
